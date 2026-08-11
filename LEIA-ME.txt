@@ -1,0 +1,42 @@
+COMO RODAR O APP
+=================
+
+1. Baixe os 5 arquivos desta pasta (app.py, engine.py, ranges.py,
+   ranking_maos.json, requirements.txt) e coloque todos NA MESMA PASTA
+   no seu computador (ex: Área de Trabalho > poker_solver).
+
+2. Abra o terminal (PowerShell) e navegue até essa pasta. Exemplo, se
+   você salvou na Área de Trabalho:
+
+   cd Desktop\poker_solver
+
+3. Instale o Streamlit (só precisa fazer isso uma vez):
+
+   pip install streamlit
+
+4. Rode o app:
+
+   streamlit run app.py
+
+5. Isso deve abrir automaticamente uma aba no seu navegador com o
+   programa. Se não abrir sozinho, o terminal vai mostrar um endereço
+   parecido com "http://localhost:8501" -- copie e cole no navegador.
+
+6. Para fechar o app, volta no terminal e aperta Ctrl+C.
+
+
+COMO USAR
+=========
+
+1. Selecione sua mão (2 cartas).
+2. Ajuste o slider com a % de mãos que a população está jogando
+   naquela situação (open-shove, resteal, etc.) -- esse número vem da
+   sua própria observação/estudo de ranges populacionais.
+3. Preencha o tamanho do pote e quanto você precisa pagar para dar call.
+4. Clique em "Calcular". O programa roda 4.000 simulações e te mostra:
+   - sua equity real contra aquele range
+   - a equity mínima necessária pelas pot odds
+   - a decisão: CALL ou FOLD
+
+LEMBRETE: essa é uma ferramenta de ESTUDO. Use antes ou depois das
+sessões para treinar leitura de spots, não durante uma mão ativa.
