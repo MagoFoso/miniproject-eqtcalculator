@@ -1,9 +1,11 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 from engine import RANKS, NAIPES
 from ranges import selecionar_top_percentual, excluir_maos_especificas, equity_vs_range
 from range_notation import parse_range
 from tabelas_populacao import TABELA_RFI, TABELA_JAM
+from range_grid import gerar_html_grade
 from pushfold import equity_necessaria_pushfold, risk_premium
 
 st.set_page_config(page_title="Calculadora de Equity vs Range", page_icon="🃏")
@@ -99,6 +101,8 @@ def selecionar_range(prefixo):
     )
     if excluir_premium:
         combos_range = excluir_maos_especificas(combos_range, {"Q", "K", "A"})
+
+    components.html(gerar_html_grade(combos_range), height=420, scrolling=False)
 
     return combos_range, excluir_premium
 
